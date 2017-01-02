@@ -11,6 +11,11 @@
 |
 */
 
+
+Route::get('/world', 'hello@world');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

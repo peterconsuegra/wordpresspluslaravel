@@ -17,11 +17,16 @@ Wordpresspluslaravel is open-source software licensed under the [MIT license](ht
 # wordpresspluslaravel install instructions
 
 
-1) Add the following two variables to your laravel project .env file
+1) Add the following two variables to your laravel project .env file and the same Database configuration of the WordPress
 
 laravelproject/.env file
 
 ```yaml
+
+DB_HOST=localhost
+DB_DATABASE=wordpressdb
+DB_USERNAME=wordpressdb_user
+DB_PASSWORD=wordpressdb_user_password
 
 WP_LOAD_PATH=/Applications/MAMP/htdocs/wordpressproject
 WP_URL=http://wordpressproject.com
@@ -102,12 +107,68 @@ protected $routeMiddleware = [
 
 ```
 
-4)Install the root coockie plugin into your WordPress project and activate it 
+4) Insert the following code to make avaliable the authentication logic in your controller
+
+```php
+
+
+public function __construct(){
+	      
+  $this->middleware('auth.wp');
+			
+}
+
+```
+
+Example inside a controller
+
+```php
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class hello extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+	
+	public function __construct()
+	{
+	      
+	     $this->middleware('auth.wp');
+			
+	}
+	
+    public function world()
+    {
+       
+	   return view('hello.world');
+    }
+
+   
+}
+
+```
+
+5) Install the root coockie plugin into your WordPress project and activate it 
 
 https://wordpress.org/plugins-wp/root-cookie/
 
 
-Or You can use the Amazing WordpressPete control panel to do this with 2 clicks and start focuses on the development
+Aditional steps
+
+Of course you have to use a server program like apache or nginx to configure both the wordpress and laravel applications within the same VPS (Virtual Private Server) or Dedicated Server.
+
+Or You can use the Amazing WordpressPete control panel to do this whole installation and configuration process with 2 clicks and start focuses on the development
 
 Go to [WordpressPete](http://wordpresspete.com "WordPressPete Homepage")
 
