@@ -1,6 +1,6 @@
 ## Wordpresspluslaravel project
 
-Wordpresspluslaravel is a simple WordPress implementation with Laravel 5.1.x that only uses four steps. It leverages all the power of thousands of WordPress developers added to Laravel's performance in an MVC (Model View Controller) software design pattern. This project is ideal for Rails developers who are moving to PHP. 
+Wordpresspluslaravel is a simple WordPress implementation with Laravel 5.1.x that only uses six steps. It leverages all the power of thousands of WordPress developers added to Laravel's performance in an MVC (Model View Controller) software design pattern. This technology is ideal for creating a powerful laravel dashboard for WordPress site
 
 ## Contributing
 
@@ -166,21 +166,28 @@ class hello extends Controller
 
 5) Replace the following code inside the file laravelproject/app/User.php
 
+```php
+
 protected $table = 'users';
+
+```
 
 for 
 
+```php
+
 protected $table = 'wp_users';
 
+```
 
 6) Install the root coockie plugin into your WordPress project and activate it 
 
 https://wordpress.org/plugins-wp/root-cookie/
 
 
-Aditional steps
+#Aditional steps
 
-The URL of the laravel project must be a subdomain of the wordpressproject for example
+The URL of the laravelproject app must be a subdomain of the wordpressproject app for example:
 
 WordPress URL: wordpressproject.com
 
@@ -190,7 +197,7 @@ Of course you have to use a server program like apache or nginx to configure bot
 
 Or You can use the Amazing WordpressPete control panel to do this whole installation and configuration process with 2 clicks and start focuses on the development
 
-Go to [WordpressPete](http://wordpresspete.com "WordPressPete Homepage")
+Go to [wordpresspete.com](http://wordpresspete.com "WordPressPete Homepage")
 
 
 
