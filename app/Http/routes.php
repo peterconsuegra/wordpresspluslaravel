@@ -14,8 +14,10 @@
 
 Route::get('/world', 'hello@world');
 
+Route::get('/', array('as' => 'hello.world', 'uses' => 'hello@world'));
 
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
