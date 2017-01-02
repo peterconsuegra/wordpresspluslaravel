@@ -16,8 +16,13 @@ Wordpresspluslaravel is open-source software licensed under the [MIT license](ht
 
 # wordpresspluslaravel install instructions
 
-
 1) Add the following two variables to your laravel project .env file and the same Database configuration of the WordPress
+
+The URL of the laravel project must be a subdomain of the wordpressproject for example
+
+wordpressproject.com
+
+dashboard.wordpressproject.com
 
 laravelproject/.env file
 
@@ -159,12 +164,27 @@ class hello extends Controller
 
 ```
 
-5) Install the root coockie plugin into your WordPress project and activate it 
+5) Replace the following code inside the file laravelproject/app/User.php
+
+protected $table = 'users';
+
+for 
+
+protected $table = 'wp_users';
+
+
+6) Install the root coockie plugin into your WordPress project and activate it 
 
 https://wordpress.org/plugins-wp/root-cookie/
 
 
 Aditional steps
+
+The URL of the laravel project must be a subdomain of the wordpressproject for example
+
+WordPress URL: wordpressproject.com
+
+Laravel URL: dashboard.wordpressproject.com
 
 Of course you have to use a server program like apache or nginx to configure both the wordpress and laravel applications within the same VPS (Virtual Private Server) or Dedicated Server.
 
