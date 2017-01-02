@@ -192,19 +192,6 @@ protected $table = 'wp_users';
 https://wordpress.org/plugins-wp/root-cookie/
 
 
-#Aditional steps
-
-The URL of the Laravel project app must be a subdomain of the WordPress project app, so for example:
-
-WordPress URL: wordpressproject.com
-
-Laravel URL: dashboard.wordpressproject.com
-
-You have to use a server program like Apache or Nginx to configure both the WordPress and Laravel applications within the same VPS (Virtual Private Server) or Dedicated Server.
-
-You can use WordpressPete's amazing control panel to do this whole installation and configuration process in 2 clicks. Focus on developing a killer project and let WordpressPete do the rest. 
-
-Go to [wordpresspete.com](http://wordpresspete.com "WordPressPete Homepage")
 
 
 
