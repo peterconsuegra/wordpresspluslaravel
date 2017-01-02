@@ -21,10 +21,14 @@ Wordpresspluslaravel is open-source software licensed under the [MIT license](ht
 
 laravelproject/.env file
 
+```yaml
+
 WP_LOAD_PATH=/Applications/MAMP/htdocs/wordpressproject
 WP_URL=http://wordpressproject.com
 
 2)Add the laravelproject/app/Http/WPAuthMiddleware.php to your laravel project
+
+```php
 
 <?php
 
@@ -80,6 +84,8 @@ class WPAuthMiddleware
 
 3)Add the this line of code 'auth.wp' => \App\Http\Middleware\WPAuthMiddleware::class, to laravelproject/app/Http/Kernel.php
 
+```php
+
 protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -93,9 +99,10 @@ https://wordpress.org/plugins-wp/root-cookie/
 
 
 
+
 Or You can use the Amazing WordpressPete control panel to do this with 2 clicks and start focuses on the development
 
-Go to http://wordpresspete.com
+[WordpressPete](http://wordpresspete.com "WordPressPete Homepage")
 
 
 
