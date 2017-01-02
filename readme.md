@@ -1,10 +1,10 @@
 ## Wordpresspluslaravel project
 
-Wordpresspluslaravel is a simple WordPress implementation with Laravel 5.1.x that only uses six steps. It leverages all the power of thousands of WordPress developers added to Laravel's performance in an MVC (Model View Controller) software design pattern. This technology is ideal for creating a powerful laravel dashboard for WordPress site
+Wordpresspluslaravel is a simple WordPress implementation with Laravel 5.1.x that only uses seven steps. It leverages all the power of thousands of WordPress developers added to Laravel's performance in an MVC (Model View Controller) software design pattern. This technology is ideal for creating a powerful Laravel dashboard for a WordPress site.
 
 ## Contributing
 
-Thank you for considering contributing to the wordpresspluslaravel project.
+Thank you for considering contributing to the Wordpresspluslaravel project.
 
 ## Security Vulnerabilities
 
@@ -16,9 +16,16 @@ Wordpresspluslaravel is open-source software licensed under the [MIT license](ht
 
 # wordpresspluslaravel install instructions
 
-1) Add the following two variables to your laravel project .env file and the same Database configuration of the WordPress
+1) Create Laravel 5.1.x and WordPress apps 
 
-The URL of the laravel project must be a subdomain of the wordpressproject for example
+composer create-project laravel/laravel laravelproject "5.1.*"
+
+In order to create a WordPress project, check out these instructions: https://codex.wordpress.org/Installing_WordPress 
+
+
+2) Add the following two variables to your Laravel project .env file and make sure the database configuration matches the one in your WordPress project.
+
+The URL of the Laravel project must be a subdomain of the WordPress project, so for example: 
 
 wordpressproject.com
 
@@ -38,7 +45,7 @@ WP_URL=http://wordpressproject.com
 
 ```
 
-2) Add the following file WPAuthMiddleware.php
+3) Add the following file WPAuthMiddleware.php
 to laravelproject/app/Http/WPAuthMiddleware.php
 
 
@@ -98,7 +105,7 @@ class WPAuthMiddleware
 
 ```
 
-3) Add the following line of code 'auth.wp' => \App\Http\Middleware\WPAuthMiddleware::class,
+4) Add the following line of code 'auth.wp' => \App\Http\Middleware\WPAuthMiddleware::class,
 to laravelproject/app/Http/Kernel.php
 
 ```php
@@ -112,7 +119,7 @@ protected $routeMiddleware = [
 
 ```
 
-4) Insert the following code to make avaliable the authentication logic in your controller
+5) Insert the following code to make avaliable the authentication logic in your controller
 
 ```php
 
@@ -164,7 +171,7 @@ class hello extends Controller
 
 ```
 
-5) Replace the following code inside the file laravelproject/app/User.php
+6) Replace the following code inside the file laravelproject/app/User.php
 
 ```php
 
@@ -180,22 +187,22 @@ protected $table = 'wp_users';
 
 ```
 
-6) Install the root coockie plugin into your WordPress project and activate it 
+7) Install the root coockie plugin into your WordPress project and activate it 
 
 https://wordpress.org/plugins-wp/root-cookie/
 
 
 #Aditional steps
 
-The URL of the laravelproject app must be a subdomain of the wordpressproject app for example:
+The URL of the Laravel project app must be a subdomain of the WordPress project app, so for example:
 
 WordPress URL: wordpressproject.com
 
 Laravel URL: dashboard.wordpressproject.com
 
-Of course you have to use a server program like apache or nginx to configure both the wordpress and laravel applications within the same VPS (Virtual Private Server) or Dedicated Server.
+You have to use a server program like Apache or Nginx to configure both the WordPress and Laravel applications within the same VPS (Virtual Private Server) or Dedicated Server.
 
-Or You can use the Amazing WordpressPete control panel to do this whole installation and configuration process with 2 clicks and start focuses on the development
+You can use WordpressPete's amazing control panel to do this whole installation and configuration process in 2 clicks. Focus on developing a killer project and let WordpressPete do the rest. 
 
 Go to [wordpresspete.com](http://wordpresspete.com "WordPressPete Homepage")
 
