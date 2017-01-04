@@ -13,6 +13,7 @@
 
 
 Route::get('/world', 'hello@world');
+Route::get('/wordpress_code_example', 'hello@wordpress_code_example');
 
 Route::get('/', array('as' => 'hello.world', 'uses' => 'hello@world'));
 
