@@ -2,6 +2,8 @@
 
 Wordpresspluslaravel is a simple WordPress implementation with Laravel 5.1.x that only uses seven steps. It leverages all the power of thousands of WordPress developers added to Laravel's performance in an MVC (Model View Controller) software design pattern. This technology is ideal for creating a powerful Laravel dashboard for a WordPress site.
 
+To install Wordpresspluslaravel with a one click installation, check out the amazing WordpressPete tool: https://wordpresspete.com
+
 ## Contributing
 
 Thank you for considering contributing to the Wordpresspluslaravel project.
